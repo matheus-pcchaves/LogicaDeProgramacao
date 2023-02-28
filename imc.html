@@ -1,0 +1,158 @@
+<meta charset="UTF-8">
+
+<script>
+    function pulaLinha(){
+        document.write("<br>")
+    }
+
+    function mostra(frase){
+        document.write(frase)
+        pulaLinha()
+    }
+
+    var loginCadastrado = "alura";
+    var senhaCadastrada = "alura321";
+
+    var loginInformado = prompt("Informe seu login");
+    var senhaInformada = prompt("Informe sua senha");
+
+    var contador = 3
+
+    while(contador > 0){
+        if ( loginCadastrado != loginInformado && senhaCadastrada != senhaInformada ) {
+            alert("Usuário ou senha inválidos");
+        } else {
+            alert("Bem-vindo ao sistema " + loginInformado);
+        } 
+
+        contador = contador - 1
+    }
+
+    var anoCopa = 1930;
+    var limite = parseInt(prompt("Qual é o ano limite?"));
+
+    while(anoCopa <= limite) {
+
+        mostra(anoCopa + " tem copa!");
+        anoCopa = anoCopa + 4
+    }
+
+    mostra("Ufa! Esses foram os anos de copa até " + limite);
+
+    var n1 = prompt("Digite um número")
+    var n2 = prompt("Digite outro número")
+    var n3 = prompt("Digite outro número")
+    var n4 = prompt("Digite outro número")
+
+    var calcN1 = n1 * n1
+    var calcN2 = n2 * n2 
+    var calcN3 = n3 * n3
+    var calcN4 = n4 * n4
+
+    if(calcN3 >= 1000){
+        mostra(calcN3)
+    } else {
+        mostra(calcN1)
+        mostra(calcN2)
+        mostra(calcN3)
+        mostra(calcN4)
+    }
+
+    var nome = prompt('Digite seu nome')
+    var contador = 1
+
+    while(contador < 10){
+        document.write(nome)
+        contador = contador + 1
+    }
+
+    var n1 = prompt("Digite um numero")
+    var n2 = prompt("Digite outro numero")
+    var n3 = prompt("Digite outro numero")
+
+    while(n1 > 0 && n2 > 0 && n3 > 0){
+        if(n1 > n2 && n1 > n3){
+            document.write("O maior numero é " + n1)
+        }
+
+        if(n2 > n1 && n2 > n3){
+            document.write("O maior numero é " + n2)
+        }
+
+        if(n3 > n1 && n3 > n2){
+            document.write("O maior numero é " + n3)
+        }
+
+        n3 = prompt("Digite zero para finalizar")
+    }
+
+    var anoDoPenta = prompt('Quando foi a última vez que o Brasil foi campeão?')
+
+    while(anoDoPenta >= 1930){
+        mostra('As copas do mundo antes do penta foram:')
+        mostra(anoDoPenta)
+        anoDoPenta = anoDoPenta - 4
+    }
+
+    // CALCULA IMC
+
+    function calculaImc(peso, altura){
+        var pesoUsuario = peso
+        var alturaUsuario = altura
+
+        var imc = pesoUsuario / (alturaUsuario * alturaUsuario)
+
+        return imc;
+    }
+
+    var nomeInformado = prompt('Informe seu nome')
+    var alturaInformada = prompt('Informe sua altura')
+    var pesoInformado = prompt('Informe seu peso')
+
+    var imc = calculaImc(pesoInformado, alturaInformada)
+
+    mostra("O imc de " + nomeInformado + " é " + imc)
+
+    if(imc < 18.5){
+        mostra("Seu IMC está abaixo do recomendado.")
+    }
+
+    if(imc > 35){
+        mostra("Seu IMC está acima do recomendado.")
+    }
+
+    if(imc >= 18.5 && imc <= 35){
+        mostra("Seu IMC está excelente")
+    }
+
+    // JOGO ADIVINHA
+
+    var numeroPensado = Math.round(Math.random() * 10);
+
+    var chute = prompt("Digite seu chute")
+
+    if(chute == numeroPensado){
+        mostra("Você acertouuu")
+    } else {
+        mostra("Você errou e o número pensado foi " + numeroPensado)
+    }
+
+    // VITÓRIAS DO SEU TIME
+
+    var vitorias = parseInt(prompt('Entre com o número de vitórias'))
+    var empates = parseInt(prompt('Entre com o número de empates'))
+
+    var pontos = (vitorias * 3) + empates
+
+    if(pontos > 28){
+        mostra('Seu time está melhor que o ano passado com ' + pontos + ' pontos')
+    }
+
+    if(pontos < 28){
+        mostra('Seu time está pior que o ano passado com ' + pontos + ' pontos')
+    }
+
+    if(pontos == 28){
+        mostra('Seu time está igual ao ano passado com ' + pontos + ' pontos')
+    }
+</script>
